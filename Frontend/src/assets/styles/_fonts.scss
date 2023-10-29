@@ -1,0 +1,61 @@
+@mixin uploadFints($file, $format, $family, $weight: 400) {
+  @font-face {
+    font-family: $family;
+    font-wieght: $weight;
+    font-display: swap;
+    src: url(#{$file}) format($format);
+  }
+}
+
+@include uploadFints(
+  $file: '../fonts/Montserrat-Regular.woff',
+  $format: 'woff',
+  $family: 'Montserrat'
+);
+
+@include uploadFints(
+  $file: '../fonts/Montserrat-Regular.woff2',
+  $format: 'woff2',
+  $family: 'Montserrat'
+);
+
+@include uploadFints(
+  $file: '../fonts/Unbounded-Bold.woff',
+  $format: 'woff',
+  $family: 'Unbounded',
+  $weight: 700
+);
+
+@include uploadFints(
+  $file: '../fonts/Unbounded-Bold.woff2',
+  $format: 'woff2',
+  $family: 'Unbounded',
+  $weight: 700
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-Regular.woff',
+  $format: 'woff',
+  $family: 'Nunito San'
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-Regular.woff2',
+  $format: 'woff2',
+  $family: 'Nunito San'
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-Bold.woff',
+  $format: 'woff',
+  $family: 'Nunito San',
+  $weight: 700
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-Bold.woff2',
+  $format: 'woff2',
+  $family: 'Nunito San',
+  $weight: 700
+);
+
