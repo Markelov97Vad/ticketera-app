@@ -1,7 +1,7 @@
 @mixin uploadFints($file, $format, $family, $weight: 400) {
   @font-face {
     font-family: $family;
-    font-wieght: $weight;
+    font-weight: $weight;
     font-display: swap;
     src: url(#{$file}) format($format);
   }
@@ -36,26 +36,65 @@
 @include uploadFints(
   $file: '../fonts/NunitoSans-Regular.woff',
   $format: 'woff',
-  $family: 'Nunito San'
+  $family: 'Nunito Sans'
 );
 
 @include uploadFints(
   $file: '../fonts/NunitoSans-Regular.woff2',
   $format: 'woff2',
-  $family: 'Nunito San'
+  $family: 'Nunito Sans'
+);
+
+@include uploadFints(
+  $file: '../fonts/Nunito-Regular.woff',
+  $format: 'woff',
+  $family: 'Nunito'
+);
+
+@include uploadFints(
+  $file: '../fonts/Nunito-Regular.woff2',
+  $format: 'woff2',
+  $family: 'Nunito'
+);
+@include uploadFints(
+  $file: '../fonts/Nunito-Light.woff',
+  $format: 'woff',
+  $family: 'Nunito',
+  $weight: 300
+);
+
+@include uploadFints(
+  $file: '../fonts/Nunito-Light.woff2',
+  $format: 'woff2',
+  $family: 'Nunito',
+  $weight: 300
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-SemiBold.woff',
+  $format: 'woff',
+  $family: 'NunitoSans',
+  $weight: 600
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-SemiBold.woff2',
+  $format: 'woff2',
+  $family: 'Nunito',
+  $weight: 600
 );
 
 @include uploadFints(
   $file: '../fonts/NunitoSans-Bold.woff',
   $format: 'woff',
-  $family: 'Nunito San',
+  $family: 'Nunito Sans',
   $weight: 700
 );
 
 @include uploadFints(
   $file: '../fonts/NunitoSans-Bold.woff2',
   $format: 'woff2',
-  $family: 'Nunito San',
+  $family: 'Nunito Sans',
   $weight: 700
 );
 
