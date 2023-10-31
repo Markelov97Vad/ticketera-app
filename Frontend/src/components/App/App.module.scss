@@ -5,6 +5,10 @@
   max-width: 1440px;
   //!!
   background-color: #9b9b9b;
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 // .page {

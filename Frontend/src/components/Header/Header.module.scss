@@ -2,7 +2,7 @@
 @use '../../assets/styles/variables' as *;
 
 .header {
-  margin:auto 0;
+  width: 100%;
   max-width: 1120px;
   display: flex;
   flex-direction: column;
