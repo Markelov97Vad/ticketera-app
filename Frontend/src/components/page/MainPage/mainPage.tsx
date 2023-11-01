@@ -1,4 +1,6 @@
 import Calendar from "../../Calendar/Calendar";
+import EventCards from "../../EventCards/EventCards";
+import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 import MainFrame from "../../MainFrame/MainFrame";
 import styles from './MainPage.module.scss';
@@ -11,6 +13,8 @@ function MainPage() {
       <h1 className={styles['main-page__title']}>Афиша</h1>
       <Calendar/>
       <MainFrame/>
+      <EventCards/>
+      <Footer />
     </main>
     </>
   );
