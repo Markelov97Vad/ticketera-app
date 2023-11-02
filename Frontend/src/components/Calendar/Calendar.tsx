@@ -120,7 +120,7 @@ function Calendar() {
   }
 
   return (
-    <div className={styles.calendar}>
+    <section className={styles.calendar}>
       <div className={`${styles.arrow} ${visibleDays > 11 ? styles['arrow-left'] : ""}`}>
         <ButtonNavigate onClick={visibleDays > 11 ? handlePrevClick : undefined} direction='left' extraClass={`${styles['arrow-btn']} ${styles['arrow-left-btn']} ${visibleDays > 11 ? "" : styles.disabled}`}/>
       </div>
@@ -132,7 +132,7 @@ function Calendar() {
       <div className={`${styles.arrow} ${currentMonthIndex + (visibleDays / 30) < monthsToShow - 1 ? styles['arrow-right'] : ""}`}>
         <ButtonNavigate onClick={currentMonthIndex + (visibleDays / 30) < monthsToShow - 1 ? handleNextClick : undefined} direction='right' extraClass={`${styles['arrow-btn']} ${styles['arrow-right-btn']} ${currentMonthIndex + (visibleDays / 30) < monthsToShow - 1 ? "" : styles.disabled}`}/>
       </div>
-    </div>
+    </section>
   );
 }
 
