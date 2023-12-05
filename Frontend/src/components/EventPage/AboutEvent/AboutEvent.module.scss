@@ -43,6 +43,7 @@
         width: 259px;
         height: 52px;
         border-radius: 50px;
+        border: none;
 
         @include showFonts(
             $family: Nunito Sans,

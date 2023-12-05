@@ -51,7 +51,7 @@ function EventPage({
       {/* стили в app.css */}
       <main className={styles['event-page']}>
         <Title text="Афиша"/>
-        <Calendar 
+        <Calendar
         // handleSelectedDateChange={handleSelectedDateChange} 
         />
         {/* <section className={styles["event-page"]}> */}

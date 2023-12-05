@@ -4,7 +4,6 @@ type MapProps = {
 }
 
 function Map({className, map} : MapProps) {
-
     return(
         <iframe src={map} className={className}></iframe>
     )

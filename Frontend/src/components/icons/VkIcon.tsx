@@ -7,7 +7,7 @@ function VkIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="m_group" clip-path="url(#clip0_1520_3082)">
+      <g id="m_group" clipPath="url(#clip0_1520_3082)">
         <g id="Group">
           <path
             id="Vector"

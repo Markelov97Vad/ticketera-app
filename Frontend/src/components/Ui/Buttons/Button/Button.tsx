@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styles from './Button.module.scss'
 
 type ButtonProps = {
   children?: JSX.Element | string,
@@ -33,18 +34,18 @@ const Button = ({
   additionalClass,
   onClick,
 }: ButtonProps) => {
-  const styles = [
-    primary ? "button_type_primary" : null,
-    primaryOutlined ? "button_type_primary-outlined" : null,
-    disabled ? "button_type_disabled" : null,
-    light ? "button_type_light" : null,
-    lightOutlined ? "button_type_light-outlined" : null,
-    dark ? "button_type_dark" : null,
-    darkOutlined ? "button_type_dark-outlined" : null,
-    grayOutlined ? "button_type_gray-outlined" : null,
-    gradient ? "button_type_gradient" : null,
+  const stylesData = [
+    primary ? styles.button_type_primary : null,
+    primaryOutlined ? styles["button_type_primary-outlined"] : null,
+    disabled ? styles.button_type_disabled : null,
+    light ? styles.button_type_light : null,
+    lightOutlined ? styles["button_type_light-outlined"] : null,
+    dark ? styles.button_type_dark : null,
+    darkOutlined ? styles["button_type_dark-outlined"] : null,
+    grayOutlined ? styles["button_type_gray-outlined"] : null,
+    gradient ? styles.button_type_gradient : null,
   ];
-  const style = styles.filter((style) => style !== null);
+  const style = stylesData.filter((style) => style !== null);
   const styleString = style.join(" ");
 
   switch (type) {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './HiddenText.module.scss';
 
 type HiddenTextProps = {
   text: string;
@@ -13,12 +14,12 @@ function HiddenText({ text, className }: HiddenTextProps) {
   };
 
   return (
-    <div className='hidden-text'>
+    <div className={styles['hidden-text']}>
       <p className={className}>
         {isHidden ? text?.slice(0, text.length / 2) + "..." : text}
       </p>
-      <button type='button' className='hidden-text__button' onClick={toggleHidden}>
-        <span className='hidden-text__button-text'>{isHidden ? 'Раскрыть описание' : 'Скрыть описание'}</span>
+      <button type='button' className={styles['hidden-text__button']} onClick={toggleHidden}>
+        <span className={styles['hidden-text__button-text']}>{isHidden ? 'Раскрыть описание' : 'Скрыть описание'}</span>
       </button>
     </div>
   );
