@@ -9,6 +9,13 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true, // можно писать так import React from 'react', вместо import * as React from 'react';
     "esModuleInterop": true, // позволяет работать с пакетами, которые используют common js как с обычными пакета с помощью import
+    "baseUrl": ".",
+    "paths": {
+      "@/*":["./src/*"]
+    },
+    "plugins": [{
+      "name": "typescript-plugin-css-modules"
+    }]
   },
   "ts-node": {
     "compilerOptions": {

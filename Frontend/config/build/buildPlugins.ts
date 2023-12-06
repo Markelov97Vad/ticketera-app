@@ -1,10 +1,10 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import path from "path";
-import webpack, { Configuration } from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";// подключите плагин автоматической загрузки js в HTML
+import MiniCssExtractPlugin from "mini-css-extract-plugin"; // сжимает отдельно CSS
+import webpack, { Configuration, DefinePlugin } from "webpack";
 import { BuildOptions } from "./types/types";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
-function buildPlugins({mode, paths} : BuildOptions): Configuration['plugins'] {
+function buildPlugins({mode, paths , analyzer, platform} : BuildOptions): Configuration['plugins'] {
   const isDevelopment = mode === 'development'
   const isProduction = mode === 'production'
 
@@ -13,6 +13,9 @@ function buildPlugins({mode, paths} : BuildOptions): Configuration['plugins'] {
       // template: path.resolve(__dirname, 'public', 'index.html'),
       template: paths.html
     }),
+    new DefinePlugin({
+      __PLATFORM__: JSON.stringify(platform),
+    })
     // new CleanWebpackPlugin(),
   ]
 
@@ -25,6 +28,9 @@ function buildPlugins({mode, paths} : BuildOptions): Configuration['plugins'] {
       filename: 'css/[name].[contenthash:8].css', // выход бандла
       chunkFilename: 'css/[name].[contenthash:8].css'
     }))
+  }
+  if(analyzer) {
+    plugins.push(new BundleAnalyzerPlugin()) // 
   }
 
   return plugins;
