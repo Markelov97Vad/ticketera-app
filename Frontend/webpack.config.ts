@@ -9,6 +9,7 @@ interface Env {
   port?: number;
   analyzer?: boolean;
   platform?: PlatformType;
+  typeChecking?: boolean
 }
 
 export default (env: Env) => {
@@ -16,6 +17,7 @@ export default (env: Env) => {
     entry: path.resolve(__dirname, "src", "index.tsx"), // точка входа
     output: path.resolve(__dirname, "build"),
     html: path.resolve(__dirname, 'public', 'index.html'),
+    public: path.resolve(__dirname, 'public'),
     src: path.resolve(__dirname, 'src')
   }
 
@@ -24,7 +26,8 @@ export default (env: Env) => {
     mode: env.mode ?? 'development',
     paths,
     analyzer: env.analyzer,
-    platform: env.platform ?? 'desktop'
+    platform: env.platform ?? 'desktop',
+    typeChecking: env.typeChecking
   });
 
   return config

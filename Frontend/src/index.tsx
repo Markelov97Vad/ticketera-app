@@ -22,6 +22,12 @@ const router = createBrowserRouter([
   }
 ]);
 
+function neF() {
+  console.log('fddfdf');
+  
+}
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
