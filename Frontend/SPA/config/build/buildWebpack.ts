@@ -21,7 +21,7 @@ function buildWebpack(option: BuildOptions) : webpack.Configuration {
       clean: true, // очищать папку при новой сборке
       assetModuleFilename: 'images/[hash][ext][query]', // складывать asset в images
     },
-    devtool: isDev ? 'inline-source-map' : false, // помогает отслеживать ошибки
+    devtool: isDev ? 'eval' : undefined, // помогает отслеживать ошибки
     devServer: isDev ? buildDevServer(option) : undefined,
     module: {
       rules: buildLoaders(option)

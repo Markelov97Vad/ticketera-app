@@ -1,7 +1,8 @@
 import path from "path";
 import { CleanWebpackPlugin } from "clean-webpack-plugin"; // обновление сборки
-import buildWebpack from "./config/build/buildWebpack";
 import { BuildMode, PlatformType } from "config/build/types/types";
+import buildWebpack from "config/build/buildWebpack";
+
 
 
 interface Env {
