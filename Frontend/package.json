@@ -1,9 +1,6 @@
 {
-  "name": "microservice-frontend",
+  "name": "frontend",
   "version": "1.0.0",
-  "scripts": {
-
-  },
   "workspaces": [
     "packages/*",
     "services/*"

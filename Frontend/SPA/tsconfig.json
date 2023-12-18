@@ -11,7 +11,7 @@
     "esModuleInterop": true, // позволяет работать с пакетами, которые используют common js как с обычными пакета с помощью import
     "baseUrl": ".",
     "paths": {
-      "@/*":["../service/store/src/*"]
+      "@/*":["../services/store/src/*"]
     },
     "plugins": [{
       "name": "typescript-plugin-css-modules"
