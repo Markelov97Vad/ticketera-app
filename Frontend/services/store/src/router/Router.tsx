@@ -3,20 +3,21 @@ import App from "@/components/App/App";
 import {Suspense} from "react";
 import About from "@/pages/About/About";
 import HomePage from "@/pages/Home/HomePage";
+import {storeRoutes} from "@packages/shared/src/routes/store"
 // import {Shop} from "@/pages/Shop";
 // import {UserCard} from "@packages/shared/src/components/UserCard";
 
 const routes = [
     {
-        path: "/store",
+        path: storeRoutes.main,
         element: <App />,
         children: [
             {
-                path: '/store/about',
+                path: storeRoutes.about,
                 element: <Suspense fallback={'Loading...'}><About /></Suspense>
             },
             {
-                path: '/store/home',
+                path: storeRoutes.home,
                 element: <Suspense fallback={'Loading...'}>
                     <div style={{color: 'red'}}>
                         <HomePage/>

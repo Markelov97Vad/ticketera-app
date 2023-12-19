@@ -52,14 +52,15 @@ export default (env: Env) => {
       ...packageJson.dependencies,
       "react": {
         eager: true,
+        requiredVersion: packageJson.dependencies['react']
       },
       'react-router-dom': {
         eager: true, // подгрузить библиотеку сразу
-        // requiredVersion: packageJson.dependencies['react-router-dom']
+        requiredVersion: packageJson.dependencies['react-router-dom']
       },
       'react-dom': {
         eager: true, // подгрузить библиотеку сразу
-        // requiredVersion: packageJson.dependencies['react-dom']
+        requiredVersion: packageJson.dependencies['react-dom']
       },
     }
   }))

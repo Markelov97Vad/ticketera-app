@@ -16,7 +16,8 @@ function buildPlugins({mode, paths , analyzer, platform, typeChecking} : BuildOp
     new HtmlWebpackPlugin({ // Подключать сгенерированный JS-код в HTML автоматически.
       // template: path.resolve(__dirname, 'public', 'index.html'),
       template: paths.html,
-      favicon: path.resolve(paths.public, 'favicon.ico')
+      favicon: path.resolve(paths.public, 'favicon.ico'),
+      publicPath: '/' //доступ по названию роута в браузере
     }),
     new DefinePlugin({
       __PLATFORM__: JSON.stringify(platform),
