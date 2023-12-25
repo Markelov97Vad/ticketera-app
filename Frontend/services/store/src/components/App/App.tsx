@@ -8,14 +8,14 @@ function App() {
 
   return (
     <>
-      <h1 data-testid={'title'} className={styles.title}>TICKETERA module</h1>
+      <h1 data-testid={'title'} className={styles.title}>TICKETERA moduleEE</h1>
       {__PLATFORM__ === 'desktop' && <p>Desktop === {__PLATFORM__}</p>}
       {__PLATFORM__ === 'mobile' && <p>Mobile === {__PLATFORM__}</p>}
       <button data-testid={'Button.test'} type="button" onClick={() => setState(state + 2)}>{state}</button>
       <button type="button" onClick={() => navigate('/store/about')}>to About</button>
-      <Suspense fallback={<h3>Loading...</h3>}>
+      {/* <Suspense fallback={<h3>Loading...</h3>}>
         <Outlet/>
-      </Suspense>
+      </Suspense> */}
     </>
   );
 }

@@ -38,6 +38,7 @@ export default (env: Env) => {
     filename: 'remoteEntry.js', // файл которы будет удаленно подключаться в host контейнер
     exposes: {
       './Router': './src/router/Router.tsx' // что будет представленно host контейнеру (выходной файл)
+      // './Router': './src/bootstrap.tsx' // что будет представленно host контейнеру (выходной файл)
     },
     shared: {
       ...packageJson.dependencies,
