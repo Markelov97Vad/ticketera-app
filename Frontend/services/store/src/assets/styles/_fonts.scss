@@ -1,0 +1,115 @@
+@mixin uploadFints($file, $format, $family, $weight: 400) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    font-display: swap;
+    src: url(#{$file}) format($format);
+  }
+}
+
+@include uploadFints(
+  $file: '../fonts/Montserrat-Regular.woff',
+  // $file: '@packages/shared/src/assets/fonts/Montserrat-Regular.woff',
+  // $file: '../../../../../packages/shared/src/assets/fonts/Montserrat-Regular.woff',
+  $format: 'woff',
+  $family: 'Montserrat'
+);
+
+@include uploadFints(
+  $file: '../fonts/Montserrat-Regular.woff2',
+  // $file: '@packages/shared/src/assets/fonts/Montserrat-Regular.woff2',
+  $format: 'woff2',
+  $family: 'Montserrat'
+);
+
+@include uploadFints(
+  $file: '../fonts/Unbounded-Bold.woff',
+  // $file: '@packages/shared/src/assets/fonts/Unbounded-Bold.woff',
+  $format: 'woff',
+  $family: 'Unbounded',
+  $weight: 700
+);
+
+@include uploadFints(
+  $file: '../fonts/Unbounded-Bold.woff2',
+  // $file: '@packages/shared/src/assets/fonts/Unbounded-Bold.woff2',
+  $format: 'woff2',
+  $family: 'Unbounded',
+  $weight: 700
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-Regular.woff',
+  // $file: '@packages/shared/src/assets/fonts/NunitoSans-Regular.woff',
+  $format: 'woff',
+  $family: 'Nunito Sans'
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-Regular.woff2',
+  // $file: '@packages/shared/src/assets/fonts/NunitoSans-Regular.woff2',
+  $format: 'woff2',
+  $family: 'Nunito Sans'
+);
+
+@include uploadFints(
+  $file: '../fonts/Nunito-Regular.woff',
+  // $file: '@packages/shared/src/assets/fonts/Nunito-Regular.woff',
+  $format: 'woff',
+  $family: 'Nunito'
+);
+
+@include uploadFints(
+  $file: '../fonts/Nunito-Regular.woff2',
+  // $file: '@packages/shared/src/assets/fonts/Nunito-Regular.woff2',
+  $format: 'woff2',
+  $family: 'Nunito'
+);
+@include uploadFints(
+  $file: '../fonts/Nunito-Light.woff',
+  // $file: '@packages/shared/src/assets/fonts/Nunito-Light.woff',
+  $format: 'woff',
+  $family: 'Nunito',
+  $weight: 300
+);
+
+@include uploadFints(
+  $file: '../fonts/Nunito-Light.woff2',
+  // $file: '@packages/shared/src/assets/fonts/Nunito-Light.woff2',
+  $format: 'woff2',
+  $family: 'Nunito',
+  $weight: 300
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-SemiBold.woff',
+  // $file: '@packages/shared/src/assets/fonts/NunitoSans-SemiBold.woff',
+  $format: 'woff',
+  $family: 'NunitoSans',
+  $weight: 600
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-SemiBold.woff2',
+  // $file: '@packages/shared/src/assets/fonts/NunitoSans-SemiBold.woff2',
+  $format: 'woff2',
+  $family: 'Nunito',
+  $weight: 600
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-Bold.woff',
+  // $file: '@packages/shared/src/assets/fonts/NunitoSans-Bold.woff',
+  $format: 'woff',
+  $family: 'Nunito Sans',
+  $weight: 700
+);
+
+@include uploadFints(
+  $file: '../fonts/NunitoSans-Bold.woff2',
+  // $file: '@packages/shared/src/assets/fonts/NunitoSans-Bold.woff2',
+  $format: 'woff2',
+  $family: 'Nunito Sans',
+  $weight: 700
+);
+

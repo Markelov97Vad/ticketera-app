@@ -1,0 +1,9 @@
+.button-profile {
+  background: inherit;
+  border: none;
+  transition: all .2s ease;
+
+  &:hover {
+    opacity: .7;
+  }
+};

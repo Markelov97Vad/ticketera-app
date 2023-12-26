@@ -1,0 +1,22 @@
+.button-like {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform .2s ease-in;
+  width: 21.98px;
+  height: 20.32px;
+  background: inherit;
+}
+
+.button-like:hover {
+  transform: scale(1.3);
+}
+
+/* Cтили для кнопоки в Storybook */
+#storybook-root > .button-like {
+  width: 110px;
+  height: 52px;
+}
+#story--uikit-buttons-buttonlike--primary--primary-inner, #story--uikit-buttons-buttonlike--primary-inner{
+  background-color: rgba(232, 230, 230, 0.695);
+}
