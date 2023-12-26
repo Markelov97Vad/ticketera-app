@@ -41,6 +41,10 @@ function buildPlugins({mode, paths , analyzer, platform, typeChecking} : BuildOp
         {
           from: path.resolve(paths.public, 'data'),
           to: path.resolve(paths.output, 'data')
+        },
+        {
+          from: path.resolve(paths.public, 'fonts'),
+          to: path.resolve(paths.output, 'fonts')
         }
       ]
     }))

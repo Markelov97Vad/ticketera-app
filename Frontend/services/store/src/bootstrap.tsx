@@ -10,6 +10,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { LazyAbout } from "./pages/About/About.lazy";
 import { storeRoutes } from "@packages/shared/src/routes/store";
 import About from "./pages/About/About";
+import '@/assets/styles/_index.scss';
 
 
 // const router = createBrowserRouter([

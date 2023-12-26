@@ -9,6 +9,9 @@ import { Suspense } from "react";
 
 import App from "@/components/App/App";
 import { storeRoutes } from "@packages/shared/src/routes/store";
+import MainPage from "@/components/page/MainPage/mainPage";
+import EventPage from "@/components/EventPage/EventPage";
+import PersonalAccount from "@/components/PersonalAccount/PersonalAccount";
 
 const routes = [
   // {
@@ -31,13 +34,13 @@ const routes = [
   // },
   {
     path: storeRoutes.main,
-    element: <App />,
+    element: <MainPage />,
   },
   {
     path: storeRoutes.event,
     element: (
       <Suspense fallback={"Loading..."}>
-        <div>EVENT PAGE</div>
+        <EventPage/>
       </Suspense>
     ),
   },
@@ -53,9 +56,10 @@ const routes = [
     path: storeRoutes.personalAccount.main,
     element: (
       <Suspense fallback={"Loading..."}>
-        <div>
+        {/* <div>
           PERSONAL ACCOUNT PAGE <Outlet />
-        </div>
+        </div> */}
+        <PersonalAccount/>
       </Suspense>
     ),
     children: [

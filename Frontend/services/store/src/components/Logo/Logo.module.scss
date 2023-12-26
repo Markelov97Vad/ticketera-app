@@ -1,0 +1,28 @@
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/styles/variables' as *;
+
+.logo {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  &__image {
+    height: 46.92px;
+    margin: auto 0;
+    transform: rotate(180deg);
+  }
+
+  &__text {
+    text-align: center;
+    @include showFonts(
+        $family: 'Nunito',
+        $size: 26px,
+        $color: $color-text-primary,
+        $line-height: 22px,
+    );
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+  }
+}

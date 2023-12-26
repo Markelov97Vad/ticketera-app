@@ -19,7 +19,7 @@ export function buildWebpack(option: BuildOptions) : webpack.Configuration {
       filename: "[name].[contenthash].js", // при изменении контента, всегда будет актуальная сборка
       // publicPath: "", //  свойство для обновления путей внутри CSS- и HTML-файлов.
       clean: true, // очищать папку при новой сборке
-      assetModuleFilename: 'images/[hash][ext][query]', // складывать asset в images
+      assetModuleFilename: 'assets/[hash][ext][query]', // складывать asset в images
     },
     devtool: isDev ? 'eval' : undefined, // помогает отслеживать ошибки
     devServer: isDev ? buildDevServer(option) : undefined,
