@@ -6,8 +6,8 @@ function About() {
     <>
       <h2>AboutPage</h2>
       <button type="button" onClick={() => prompt('Отправить сообщение')}>
-        Напиши мне 
-        <PenIcon style={{ color: "blue"}} width={30} height={30} />
+        Напиши мне
+        <PenIcon style={{ color: 'blue' }} width={30} height={30} />
       </button>
       <img src={about} alt="about" />
     </>

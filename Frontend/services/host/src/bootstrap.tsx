@@ -1,11 +1,8 @@
-import ReactDOM from "react-dom/client";
-import { StrictMode } from "react";
-import App from "./components/App/App";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { router } from "./router/Router";
+import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react';
+import App from './components/App/App';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { router } from './router/Router';
 // import ErrorPage from "./components/ErrorPage/ErrorPage";
 // import { LazyAbout } from "./components/About/About.lazy";
 
@@ -23,10 +20,9 @@ import { router } from "./router/Router";
 //   }
 // ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+	<StrictMode>
+		<RouterProvider router={router} />
+	</StrictMode>,
 );
-

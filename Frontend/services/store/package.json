@@ -12,12 +12,18 @@
     "build:typescript": "webpack --env mode=production --env platform=desktop --env typeChecking=true"
   },
   "dependencies": {
-    "@packages/shared": "*",
     "@packages/build-config": "*",
+    "@packages/shared": "*",
     "@types/react-router-dom": "^5.3.3",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.1",
-    "moment": "^2.29.4"
+    "react-router-dom": "^6.20.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2"
   }
 }
