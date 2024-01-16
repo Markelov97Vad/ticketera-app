@@ -99,9 +99,9 @@ function buildLoaders(options: BuildOptions ): ModuleOptions['rules'] {
   return [
     assetLoader,
     styleLoader,
-    // tsLoader,
+    tsLoader,
     // babelLoader,
-    babelLoader(options),
+    // babelLoader(options),
     svgLoader
   ]
 }
