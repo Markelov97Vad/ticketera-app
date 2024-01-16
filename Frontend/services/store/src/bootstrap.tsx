@@ -9,8 +9,6 @@ import About from './pages/About/About';
 import '@/assets/styles/_index.scss';
 import routes from './router/Router';
 
-var s = 223;
-
 // const router = createBrowserRouter([
 //   {ß
 //     path: '/',

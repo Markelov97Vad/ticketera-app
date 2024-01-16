@@ -18,10 +18,6 @@ interface Env {
 	typeChecking?: boolean;
 }
 
-const ne = {
-	1: '11',
-};
-
 export default (env: Env) => {
 	const paths = {
 		entry: path.resolve(__dirname, 'src', 'index.tsx'), // точка входа

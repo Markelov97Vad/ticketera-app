@@ -101,7 +101,7 @@ function buildLoaders(options: BuildOptions ): ModuleOptions['rules'] {
     styleLoader,
     tsLoader,
     // babelLoader,
-    // babelLoader(options),
+    babelLoader(options),
     svgLoader
   ]
 }

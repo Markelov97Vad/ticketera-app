@@ -7,7 +7,8 @@ function buildDevServer(options: BuildOptions): DevServerConfiguration {
     static: path.resolve(__dirname, './build'), // путь, куда "смотрит" режим разработчика
     compress: true, // это ускорит загрузку в режиме разработки
     port: options.port ?? 3000, // порт, чтобы открывать сайт по адресу localhost:8080
-    // open: true, // сайт откроется автоматически
+    open: false, // сайт откроется автоматически
+    hot: true,
     historyApiFallback: true, // разрешить навигацию по сайту
   };
 }

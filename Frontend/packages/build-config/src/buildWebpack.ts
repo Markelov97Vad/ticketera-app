@@ -26,6 +26,9 @@ export function buildWebpack(option: BuildOptions) : webpack.Configuration {
     module: {
       rules: buildLoaders(option)
     },
+    optimization: {
+      runtimeChunk: 'single'
+    },
     resolve: buildResolvers(option),
     plugins: buildPlugins(option),
   };

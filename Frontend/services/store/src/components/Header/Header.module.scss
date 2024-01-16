@@ -1,4 +1,5 @@
 @use '../../assets/styles/mixins' as *;
+
 @use '../../assets/styles/variables' as *;
 
 .header {
@@ -8,6 +9,7 @@
   flex-direction: column;
   gap: 52px;
   padding-top: 16px;
+
   &__box {
     display: flex;
     flex-direction: row;
@@ -15,7 +17,6 @@
 
     &-location {
       max-width: 250px;
-      text-align: center;
       align-self: center;
       text-align: center;
       font-feature-settings: "clig" off, "liga" off;
@@ -38,10 +39,10 @@
 
   &__search {
     margin: 0 auto;
+
     &-input {
       width: 376px;
       height: 52px;
-      padding: 0;
       color: var(--light-gray, #9a9a9a);
       font-feature-settings: "clig" off, "liga" off;
       font-family: Nunito Sans;
@@ -52,7 +53,7 @@
       border-radius: 50px;
       border: 1px solid var(--violet, #8b52f6);
       background: var(--white, #fff);
-      padding: 0px 20px;
+      padding: 0 20px;
       align-items: center;
       gap: 8px;
       flex-shrink: 0;
@@ -72,24 +73,27 @@
   }
 
   &__button {
+
     &_logged {
       width: 40px;
       cursor: pointer;
+
       &:hover {
         opacity: .7;
       }
     }
+
     &_signin {
-      // width: ;
       padding: 12px 38px;
       border-radius: 50px;
-      font-family: Nunito Sans;
+      font-family: nunito sans;
       font-size: 18px;
       font-style: normal;
       font-weight: 700;
       line-height: 22px; 
     }
   }
+
   &__buttons {
     height: 40px;
     justify-content: space-between;

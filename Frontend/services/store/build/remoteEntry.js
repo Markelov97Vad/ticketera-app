@@ -213,7 +213,7 @@ eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPAC
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("var moduleMap = {\n\t\"./Router\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_moment_locale_af_js-node_modules_moment_locale_ar-dz_js-node_modules_mom-248d90\"), __webpack_require__.e(\"vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_getU-08f0bb\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-router-dom_react-router-dom\"), __webpack_require__.e(\"src_router_Router_tsx-node_modules_moment_locale_sync_recursive_\")]).then(() => (() => ((__webpack_require__(/*! ./src/router/Router.tsx */ \"./src/router/Router.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://store/container_entry?");
+eval("var moduleMap = {\n\t\"./Router\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_moment_locale_af_js-node_modules_moment_locale_ar-dz_js-node_modules_mom-248d90\"), __webpack_require__.e(\"vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_getU-08f0bb\"), __webpack_require__.e(\"node_modules_moment_locale_sync_recursive_-src_router_Router_tsx\"), __webpack_require__.e(\"node_modules_pmmmwh_react-refresh-webpack-plugin_lib_runtime_RefreshUtils_js\")]).then(() => (() => ((__webpack_require__(/*! ./src/router/Router.tsx */ \"./src/router/Router.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://store/container_entry?");
 
 /***/ }),
 
@@ -1881,7 +1881,7 @@ eval("\n__webpack_require__(/*! ./url-search-params */ \"../../node_modules/core
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"vendors-node_modules_moment_locale_af_js-node_modules_moment_locale_ar-dz_js-node_modules_mom-248d90":"2944fd28693b4083dd28","node_modules_moment_locale_sync_recursive_":"602e435f8c1d84771dee","vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_getU-08f0bb":"b088e33e1fa531cec156","webpack_sharing_consume_default_react-router-dom_react-router-dom":"b11dfd8fa7449f3b9725","src_router_Router_tsx-node_modules_moment_locale_sync_recursive_":"ea336195b7bd51d02443"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"vendors-node_modules_moment_locale_af_js-node_modules_moment_locale_ar-dz_js-node_modules_mom-248d90":"2944fd28693b4083dd28","node_modules_moment_locale_sync_recursive_":"602e435f8c1d84771dee","vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_getU-08f0bb":"b088e33e1fa531cec156","node_modules_moment_locale_sync_recursive_-src_router_Router_tsx":"1aedccfb90c9d8adb65e","node_modules_pmmmwh_react-refresh-webpack-plugin_lib_runtime_RefreshUtils_js":"8c91e8aaa8c8e056b581"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -2260,10 +2260,8 @@ eval("\n__webpack_require__(/*! ./url-search-params */ \"../../node_modules/core
 /******/ 			}
 /******/ 		});
 /******/ 		var chunkMapping = {
-/******/ 			"webpack_sharing_consume_default_react-router-dom_react-router-dom": [
-/******/ 				"webpack/sharing/consume/default/react-router-dom/react-router-dom"
-/******/ 			],
-/******/ 			"src_router_Router_tsx-node_modules_moment_locale_sync_recursive_": [
+/******/ 			"node_modules_moment_locale_sync_recursive_-src_router_Router_tsx": [
+/******/ 				"webpack/sharing/consume/default/react-router-dom/react-router-dom",
 /******/ 				"webpack/sharing/consume/default/moment/moment"
 /******/ 			]
 /******/ 		};
@@ -2316,7 +2314,7 @@ eval("\n__webpack_require__(/*! ./url-search-params */ \"../../node_modules/core
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("webpack_sharing_consume_default_react-router-dom_react-router-dom" != chunkId) {
+/******/ 						if(true) { // all chunks have JS
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -2341,7 +2339,7 @@ eval("\n__webpack_require__(/*! ./url-search-params */ \"../../node_modules/core
 /******/ 								}
 /******/ 							};
 /******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
-/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 						}
 /******/ 					}
 /******/ 				}
 /******/ 		};

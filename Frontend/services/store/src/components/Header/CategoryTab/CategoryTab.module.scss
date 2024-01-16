@@ -1,4 +1,5 @@
 @use '../../../assets/styles/mixins' as *;
+
 @use '../../../assets/styles/variables' as *;
 
 .category-tab {
@@ -18,6 +19,7 @@
     font-feature-settings: "clig" off, "liga" off;
     display: flex;
     align-items: center;
+
     @include showFonts(
         $family: Nunito,
         $size: 20px,

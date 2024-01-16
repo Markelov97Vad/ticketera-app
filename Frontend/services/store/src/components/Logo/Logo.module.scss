@@ -1,4 +1,5 @@
 @use '../../assets/styles/mixins' as *;
+
 @use '../../assets/styles/variables' as *;
 
 .logo {
@@ -14,12 +15,14 @@
 
   &__text {
     text-align: center;
+
     @include showFonts(
         $family: 'Nunito',
         $size: 26px,
         $color: $color-text-primary,
         $line-height: 22px,
     );
+
     letter-spacing: 1px;
     display: flex;
     align-items: center;
