@@ -1,27 +1,51 @@
-# React + TypeScript + Vite
+<h1 align="center">Веб-приложение: "Ticketera"(В разработке)</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+_____
 
-Currently, two official plugins are available:
+<a name="summary">
+  <details>
+    <summary>Оглавление</summary>
+    <ol>
+      <li><a href="#project-description">Описание проекта</a></li>
+      <li><a href="#technologies">Стек технологий</a></li>
+      <li><a href="#functionality">Функционал</a></li>
+    </ol>
+  </details>
+</a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<a name="project-description"><h2>1. Описание проекта</h2></a>
+Приложение Ticketera является сервисом для поиска и покупки билетов на мероприятия с фильтрацией событий и с возможностью хранить их в личном кабинете.
 
-## Expanding the ESLint configuration
+____
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<b>Ссылки на проект:</b>
 
-- Configure the top-level `parserOptions` property like this:
+Organizations: https://github.com/by-the-ticket-take-the-ride
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Figma (макет): https://www.figma.com/file/9PR19uiwDP0uIOD924T4ZF/%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5?type=design&node-id=418%3A1674&mode=design&t=F1SQAwbmpW25hqrW-1
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+___
+
+<a name="technologies"><h2>2. Стек технологий</h2></a>
+
+**Frontend**:
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Redux Toolkit](https://img.shields.io/badge/Redux&nbsp;Toolkit-333?style=for-the-badge&logo=redux&logoColor=7549bc)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) 
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
+
+
+____
+
+<a name="functionality"><h2>3. Функционал</h2></a>
+
+<h3 align="start">В разработке</h3>
+
+<div align="right">(<a href="#summary">к оглавлению</a>)</div>
+
+___

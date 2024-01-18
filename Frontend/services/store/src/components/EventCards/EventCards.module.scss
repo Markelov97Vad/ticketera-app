@@ -1,0 +1,70 @@
+@use '../../assets/styles/variables' as *;
+
+@use '../../assets/styles/mixins' as *;
+
+.event-cards {
+  padding: 60px 15px 117px;
+  margin-top: 60px;
+  background-color: $color-background-second;
+
+  &__container {
+    max-width: 1124px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__title {
+    letter-spacing: 0.15px;
+    margin: 0 0 48px;
+
+    @include showFonts(
+      $family: Unbounded,
+      $size: 30px,
+      $weight: 700,
+      $line-height: 31.8px,
+      $color: $color-text-primary
+    );
+  }
+  
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 72px;
+  }
+  
+  &__buttons-button {
+    padding: 10px 30px;
+    border-radius: 50px;
+
+    @include showFonts(
+      $family: 'Nunito Sans',
+      $size: 16px,
+      $line-height: 22px,
+      $color: $color-text-primary
+    );
+  }
+  
+  &__buttons-button_active {
+    background-color: $color-background-gray;
+    color: #fff;
+  }
+  
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+    margin-bottom: 72px;
+  }
+  
+  &__button {
+    padding: 12px 47px;
+    border-radius: 50px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    margin: 0 auto;
+    min-width: 106px;
+  }
+}

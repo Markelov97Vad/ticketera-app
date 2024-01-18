@@ -14,7 +14,8 @@ _____
 </a>
 
 <a name="project-description"><h2>1. Описание проекта</h2></a>
-Приложение Ticketera является сервисом для поиска и покупки билетов на мероприятия с фильтрацией событий и с возможностью хранить их в личном кабинете. Проект изначально был разработан в кросс-функциональной команде; Frontend (`React.js, CSS, cra, React Context`), Backend (`Python`), и прошел MVP (1 месяц разработки с нуля), затем второй этап успешной защиты перед экспертами Яндекс Акселератора. После защиты разработку приостановили, но я решил перенести проект на другой стэк технологий и доделать функционал уже самостоятельно. Версию фронтенда на (`React.js, CSS, cra, React Context`) вы можете найти в ветке `cra`.
+Приложение Ticketera является сервисом для поиска и покупки билетов на мероприятия с фильтрацией событий и с возможностью хранить их в личном кабинете.
+
 
 ____
 
@@ -39,14 +40,6 @@ ___
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) 
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-**Backend**:
-
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
 ____
 
