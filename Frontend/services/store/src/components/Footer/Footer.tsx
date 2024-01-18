@@ -1,9 +1,3 @@
-// import "./Footer.scss";
-import footerLogo from '../../assets/images/footer-logo.svg';
-// import tiktokLogo from "../../assets/images/tiktok-icon.svg";
-// import vkLogo from "../../assets/images/vk-icon.svg";
-
-// import okLogo from "../../assets/images/ok-icon.svg";
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Footer.module.scss';
 import TicktokIcon from '../icons/TiktokIcon';
@@ -19,7 +13,7 @@ const Footer = () => {
 		} else {
 			return;
 		}
-	};	
+	};
 	return (
 		<div className={styles.footer}>
 			<div className={styles.footer__top}>

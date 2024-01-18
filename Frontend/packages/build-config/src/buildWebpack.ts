@@ -27,7 +27,7 @@ export function buildWebpack(option: BuildOptions) : webpack.Configuration {
       rules: buildLoaders(option)
     },
     optimization: {
-      runtimeChunk: 'single'
+      runtimeChunk: 'single' // fix hmr bug
     },
     resolve: buildResolvers(option),
     plugins: buildPlugins(option),
