@@ -1,0 +1,126 @@
+@use '../../assets/styles/variables' as *;
+
+@use '../../assets/styles/mixins' as *;
+
+.main-frame {
+    width: calc((1440 / 1440) * 100%);
+    margin: 0 auto;
+    height: 560px;
+    color: black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+
+    &__container {
+        position: absolute;
+        width: calc((1122 / 1440) * 100%);
+        height: 510px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__img-wrapper {
+        width: 100%;
+        height: 560px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__buttons {
+        width: 278px;
+        height: 24px;
+        display: flex;
+        justify-content: flex-end;
+        align-self: flex-end;
+    }
+
+    &__button-title {
+        padding-left: 8px;
+
+        @include showFonts(
+            $family: 'Nunito Sans',
+            $size: 16px,
+            $color: $color-text-white,
+            $line-height: 22px,
+        );
+    }
+
+    &__button-like {
+        width: 116px;
+        display: flex;
+        align-content: center;
+    }
+
+    &__info {
+        width: 400px;
+    }
+
+    &__tags-info {
+        width: 101px;
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+        letter-spacing: 0.28px;
+
+        @include showFonts(
+            $family: 'Nunito Sans',
+            $size: 14px,
+            $color: $color-text-white,
+            $line-height: 31.8px,
+        );
+    }
+
+    &__title {
+        padding: 18px 0 28px;
+        margin: 0;
+
+        @include showFonts(
+            $family: 'Unbounded',
+            $size: 50px,
+            $color: $color-text-primary,
+            $line-height: 53px,
+            $weight: 600
+        );
+    }
+
+    &__event-info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__date {
+        padding-bottom: 16px;
+
+        &-title {
+            padding-left: 8px;
+
+            @include showFonts(
+                $family: 'Nunito Sans',
+                $size: 16px,
+                $color: $color-text-white,
+                $line-height: 22px
+            );
+        }
+    }
+
+
+    &__location-title {
+        padding-left: 8px;
+
+        @include showFonts(
+            $family: 'Nunito Sans',
+            $size: 16px,
+            $color: $color-text-white,
+            $line-height: 22px
+        );
+    }
+}

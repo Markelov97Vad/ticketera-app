@@ -1,0 +1,15 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "start": "concurrently \" cd services/admin && npm run start && cd ../../\"  \" cd services/host && npm run start && cd ../../\"  \" cd services/store && npm run start && cd ../../\"",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

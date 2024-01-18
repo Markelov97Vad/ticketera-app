@@ -1,0 +1,13 @@
+@mixin showFonts(
+  $family,
+  $size,
+  $color,
+  $weight: 400,
+  $line-height 
+) {
+  font-family: $family, 'Arial';
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+}

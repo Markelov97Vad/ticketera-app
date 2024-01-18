@@ -1,0 +1,10 @@
+.button-navigate {
+  border: none;
+  background: inherit;
+  transition: all .2s ease;
+  margin-bottom: 18.5px;
+
+  &:hover {
+    opacity: .7;
+  }
+}
