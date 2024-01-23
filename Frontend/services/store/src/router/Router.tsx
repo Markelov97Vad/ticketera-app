@@ -46,7 +46,7 @@ const routes = [
     element: <MainPage />,
   },
   {
-    path: storeRoutes.event,
+    path: `${storeRoutes.event}/:id`,
     element: (
       <Suspense fallback={'Loading...'}>
         <EventPage />

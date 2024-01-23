@@ -58,19 +58,23 @@ export const getEvents = (req : Request, res: Response, next: NextFunction) => {
     .catch(err => handleError(err, next))
 }
 
-// export const getCurrentWine = (req : Request, res: Response, next: NextFunction) => {
-//   const { id } = req.params;
+export const getCurrentEvent = (req : Request, res: Response, next: NextFunction) => {
+  const { id } = req.params;
+  console.log(id);
+  
 
-//   Wine.findById(id)
-//     .populate('owner')
-//     .then((currentWine) => {
-//       if (!currentWine) {
-//         throw new NotFoundError(NOT_FOUND_MESSAGE);
-//       }
-//       return res.status(OK_CODE).send(currentWine);
-//     })
-//     .catch((err) => handleError(err, next))
-// }
+  Event.findById(id)
+    // .populate('owner')
+    .then((currentEvent) => {
+      if (!currentEvent) {
+        throw new NotFoundError(NOT_FOUND_MESSAGE);
+      }
+      console.log(currentEvent);
+      
+      return res.status(OK_CODE).send(currentEvent);
+    })
+    .catch((err) => handleError(err, next))
+}
 
 // export const getCurrentUserWine = (req: Request, res: Response, next: NextFunction) => {
 //   const { _id }  = req.user;

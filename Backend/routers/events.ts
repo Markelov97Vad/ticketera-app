@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  getCurrentEvent,
   getEvents
   // addWineFromFavorite,
   // createWine,
@@ -16,7 +17,7 @@ import {
 const eventRouter = express.Router();
 
 eventRouter.get("/", getEvents);
-// wineRouter.get("/current/:id", getCurrentWine);
+eventRouter.get("/:id", getCurrentEvent);
 
 // wineRouter.use(auth);
 

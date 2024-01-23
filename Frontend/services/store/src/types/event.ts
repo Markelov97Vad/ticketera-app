@@ -1,6 +1,38 @@
-export interface IEvent {
+import { IUserPersonalData } from './user';
+
+export interface IEventCard {
+  _id: string;
   name: string;
   location: string;
   image: string;
-  date: string;
+  time_event: string;
+  date_event: string;
+  likes: IUserPersonalData[];
+}
+
+export type EventType = {
+  _id: string;
+  type_event: string;
+  place: {
+    name: string;
+    address: string;
+    city: string;
+    point?: string;
+    type: {
+      name: string;
+      zone: Array<{
+        name: string;
+        row: number;
+        seat: number;
+        price: number;
+      }>;
+    };
+  };
+  name: string;
+  location: string;
+  description: string;
+  date_event: string;
+  time_event: string;
+  image: string;
+  likes: IUserPersonalData[];
 };

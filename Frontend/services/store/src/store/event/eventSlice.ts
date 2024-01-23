@@ -1,15 +1,17 @@
 import { createSlice, PayloadAction, SerializedError } from '@reduxjs/toolkit';
-import { fetchEvents } from './api';
-import { IEvent } from '@/types/event';
+import { fetchEvents, getCurrentEvent } from './api';
+import { EventType } from '@/types/event';
 
 type EventState = {
-  events: IEvent[];
+  events: EventType[];
+  currentEvent: EventType;
   loading: 'idle' | 'pending' | 'succeeded' | 'failed';
   error: null | SerializedError;
 };
 
 const initialState: EventState = {
   events: [],
+  currentEvent: undefined,
   loading: 'idle',
   error: null,
 };
@@ -33,12 +35,14 @@ const eventSlice = createSlice({
       console.log('state', state);
       console.log('action', action);
 
-      state.events.push({
-        name: 'testName',
-        location: 'testLocation',
-        image: 'testImage',
-        date: 'testDate',
-      });
+      // state.events.push({
+      //   id: '1',
+      //   name: 'testName',
+      //   location: 'testLocation',
+      //   image: 'testImage',
+      //   time_event: 'testTime',
+      //   date_event: 'testTime',
+      // });
     },
   },
   extraReducers: builder => {
@@ -53,6 +57,21 @@ const eventSlice = createSlice({
         state.events = action.payload;
       })
       .addCase(fetchEvents.rejected, (state, action) => {
+        state.loading = 'failed';
+        state.error = action.error;
+      })
+      .addCase(getCurrentEvent.pending, state => {
+        state.loading = 'pending';
+        state.error = null;
+      })
+      .addCase(getCurrentEvent.fulfilled, (state, action) => {
+        state.loading = 'succeeded';
+        state.error = null;
+        console.log(action.payload);
+
+        state.currentEvent = action.payload;
+      })
+      .addCase(getCurrentEvent.rejected, (state, action) => {
         state.loading = 'failed';
         state.error = action.error;
       });

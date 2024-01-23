@@ -8,64 +8,68 @@ import styles from './EventPage.module.scss';
 import AboutEvent from '../../components/AboutEvent/AboutEvent';
 import EventLocation from '../../components/EventLocation/EventLocation';
 import Title from '../../components/Title/Title';
+import { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
+import { getCurrentEvent } from '@/store/event/api';
+import { EventType } from '@/types/event';
 
-function EventPage({
-	// currentCity,
-	// isActivePopupCity,
-	// setIsActivePopupCity,
-	...props
-}) {
-	// const [selectedDateEvents, setSelectedDateEvents] = useState([]);
-	// const handleSelectedDateChange = (events) => {
-	//   setSelectedDateEvents(events);
-	// };
-	// const {
-	//   setTotalOrder,
-	//   setPaymentData,
-	// } = useSeatContext();
+function EventPage() {
+  const dispatch = useAppDispatch();
+  const { currentEvent, loading } = useAppSelector(state => state.event);
+  // const [eventData, setEventData] = useState<EventType>(currentEvent);
+  // const [selectedDateEvents, setSelectedDateEvents] = useState([]);
+  // const handleSelectedDateChange = (events) => {
+  //   setSelectedDateEvents(events);
+  // };
+  // const {
+  //   setTotalOrder,
+  //   setPaymentData,
+  // } = useSeatContext();
 
-	// const { currentEvent, setCurrentEvent } = useContext(EventsContext);
-	const { id } = useParams();
+  // const { currentEvent, setCurrentEvent } = useContext(EventsContext);
+  const { id } = useParams();
 
-	// useEffect(() => {
-	//   setTotalOrder({});
-	//   setPaymentData([]);
-	//   currentEventApi
-	//     .getCurrentEvent(id)
-	//     .then((event) => {
-	//       if (event) {
-	//         setCurrentEvent(event);
-	//       }
-	//     })
-	//     .catch((err) => console.log(err));
-	// }, []);
+  useEffect(() => {
+    console.log(id);
+    dispatch(getCurrentEvent(id));
+    // setTotalOrder({});
+    // setPaymentData([]);
+    // currentEventApi
+    //   .getCurrentEvent(id)
+    //   .then((event) => {
+    //     if (event) {
+    //       setCurrentEvent(event);
+    //     }
+    //   })
+    //   .catch((err) => console.log(err));
+  }, []);
 
-	return (
-		<>
-			<ScrollToTop />
-			<Header
-			// currentCity={currentCity}
-			// isActivePopupCity={isActivePopupCity}
-			// setIsActivePopupCity={setIsActivePopupCity}
-			/>
-			<main className={styles['event-page']}>
-				<Title text="Афиша" />
-				<Calendar
-				// handleSelectedDateChange={handleSelectedDateChange}
-				/>
-				{/* <section className={styles["event-page"]}> */}
-				<MainFrame
-					// eventData={currentEvent}
-					{...props}
-				/>
-				<AboutEvent idEvent={id} />
-				<EventLocation />
-				{/* </section> */}
-			</main>
-			<Footer />
-			{/* <ChoiseThePalce /> */}
-		</>
-	);
+  return (
+    <>
+      <ScrollToTop />
+      <Header
+      // currentCity={currentCity}
+      // isActivePopupCity={isActivePopupCity}
+      // setIsActivePopupCity={setIsActivePopupCity}
+      />
+      <main className={styles['event-page']}>
+        <Title text="Афиша" />
+        <Calendar
+        // handleSelectedDateChange={handleSelectedDateChange}
+        />
+        {/* <section className={styles["event-page"]}> */}
+        <MainFrame
+          eventData={currentEvent}
+          // {...props}
+        />
+        <AboutEvent idEvent={id} />
+        <EventLocation />
+        {/* </section> */}
+      </main>
+      <Footer />
+      {/* <ChoiseThePalce /> */}
+    </>
+  );
 }
 
 export default EventPage;

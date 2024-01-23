@@ -1,19 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './MainFrame.module.scss';
 import * as supportFunction from '../../utils/supportFunction';
 
-import eventData from './eventTestData.json';
+// import eventData from './eventTestData.json';
 import ButtonLike from '../Ui/Buttons/ButtonLike/ButtonLike';
 import TimeIcon from '../icons/TimeIcon';
 import PlaceIcon from '../icons/PlaceIcon';
+import { EventType } from '@/types/event';
 // import ButtonShare from '../Ui/Buttons/ButtonShare/ButtonShare';
 
-function MainFrame() {
+type MainFrameProps = {
+  eventData: EventType;
+};
+
+function MainFrame({ eventData }: MainFrameProps) {
   const [isActive, setIsActive] = useState(false);
+  // const { image, name, date_event, time_event } = eventData;
 
   const handleLike = () => {
     setIsActive(!isActive);
   };
+  useEffect(() => {
+    console.log(eventData?.image);
+  }, [eventData]);
 
   return (
     <section className={styles['main-frame']}>
@@ -57,7 +66,7 @@ function MainFrame() {
           >
             <PlaceIcon color="white" />
             <span className={styles['main-frame__location-title']}>
-              {eventData?.place?.city?.name}, {eventData?.place?.name}
+              {eventData?.place?.city}, {eventData?.place.name}
             </span>
           </div>
         </div>
