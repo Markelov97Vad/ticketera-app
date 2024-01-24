@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'; // обновление сборки
+// import { CleanWebpackPlugin } from 'clean-webpack-plugin'; // обновление сборки
 // import { BuildMode, PlatformType } from "config/build/types/types";
 // import buildWebpack from "config/build/buildWebpack";
 import {
@@ -63,6 +63,15 @@ export default (env: Env) => {
         'react-redux': {
           eager: true,
           requiredVersion: packageJson.dependencies['react-redux'],
+        },
+        'react-map-gl': {
+          eager: true,
+          requiredVersion: packageJson.dependencies['react-map-gl'],
+        },
+        'maplibre-gl': {
+          eager: true,
+          version: '^3.6.2',
+          requiredVersion: packageJson.dependencies['maplibre-gl'],
         },
       },
     }),

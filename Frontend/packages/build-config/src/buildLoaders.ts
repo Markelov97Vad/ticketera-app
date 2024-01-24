@@ -19,11 +19,13 @@ function buildLoaders(options: BuildOptions ): ModuleOptions['rules'] {
   }
   
   const styleLoader = {
-    test: /\.s[ac]ss$/i,
+    test: /\.(scss|css)$/,
+    // test: /\.s[ac]ss$/i,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      cssLoadersMod,
-      "sass-loader" // для обработки CSS и SCSS
+      // cssLoadersMod,
+     'css-loader',
+      'sass-loader' // для обработки CSS и SCSS
     ],
   }
   // // ts-loader умеет работать с jsx
