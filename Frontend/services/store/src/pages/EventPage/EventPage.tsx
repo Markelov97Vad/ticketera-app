@@ -8,14 +8,14 @@ import styles from './EventPage.module.scss';
 import AboutEvent from '../../components/AboutEvent/AboutEvent';
 import EventLocation from '../../components/EventLocation/EventLocation';
 import Title from '../../components/Title/Title';
-import { useEffect, useState } from 'react';
+import ChoiseThePlace from '../../components/ChoiceThePlace/ChoiceThePlace';
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
 import { getCurrentEvent } from '@/store/event/api';
-import { EventType } from '@/types/event';
 
 function EventPage() {
   const dispatch = useAppDispatch();
-  const { currentEvent, loading } = useAppSelector(state => state.event);
+  const { currentEvent } = useAppSelector(state => state.event);
   // const [eventData, setEventData] = useState<EventType>(currentEvent);
   // const [selectedDateEvents, setSelectedDateEvents] = useState([]);
   // const handleSelectedDateChange = (events) => {
@@ -62,12 +62,12 @@ function EventPage() {
           eventData={currentEvent}
           // {...props}
         />
-        <AboutEvent idEvent={id} />
-        <EventLocation />
+        <AboutEvent eventData={currentEvent} />
+        <EventLocation eventData={currentEvent} />
         {/* </section> */}
       </main>
       <Footer />
-      {/* <ChoiseThePalce /> */}
+      <ChoiseThePlace />
     </>
   );
 }

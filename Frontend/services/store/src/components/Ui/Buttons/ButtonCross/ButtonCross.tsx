@@ -1,9 +1,9 @@
-import './ButtonCross.css';
+import styles from './ButtonCross.module.scss';
 
 type ButtonCrossProps = {
   additionalClass: string;
-  red: boolean;
-  black: boolean;
+  red?: boolean;
+  black?: boolean;
   onClick: () => void;
 };
 
@@ -18,9 +18,11 @@ function ButtonCross({
   return (
     <button
       onClick={onClick}
-      className={`button-cross ${additionalClass} button-cross_color_${color}`}
+      className={`${styles['button-cross']} ${additionalClass} ${
+        styles[`button-cross_color_${color}`]
+      }`}
       type="button"
-    ></button>
+    >X</button>
   );
 }
 

@@ -1,9 +1,14 @@
-import eventsDataJson from './events.json';
+// import eventsDataJson from './events.json';
 import styles from './EventLocation.module.scss';
 import MapComponent from '../MapComponent/MapComponent';
+import { IEvent } from '@/models/event';
 
-function EventLocation() {
-  const eventData = eventsDataJson[0];
+type EventLocationProps = {
+  eventData: IEvent;
+};
+
+function EventLocation({ eventData }: EventLocationProps) {
+  // const eventData = eventsDataJson[0];
   return (
     <section className={styles['event-location']}>
       <div className={styles['event-location__container']}>
@@ -14,8 +19,7 @@ function EventLocation() {
         <p className={styles['event-location__adress']}>
           {eventData?.place?.address}
         </p>
-        <MapComponent point='37.553728 55.715742'/>
-        {/* <Map className={styles['event-location__map']} map={''} /> */}
+        <MapComponent point={eventData?.place?.point} />
       </div>
     </section>
   );

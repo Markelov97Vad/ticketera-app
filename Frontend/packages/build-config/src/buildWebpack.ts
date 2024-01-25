@@ -12,6 +12,7 @@ export function buildWebpack(option: BuildOptions) : webpack.Configuration {
   console.log('IsDevelop', isDev);
 
   return {
+    devtool: 'source-map', // помогает отслеживать ошибки
     mode: mode, // режим разработчика
     entry: paths.entry, // точка входа
     output: {
@@ -21,7 +22,8 @@ export function buildWebpack(option: BuildOptions) : webpack.Configuration {
       clean: true, // очищать папку при новой сборке
       assetModuleFilename: 'assets/[hash][ext][query]', // складывать asset в images
     },
-    devtool: isDev ? 'eval' : undefined, // помогает отслеживать ошибки
+    // devtool: isDev ? 'inline-source-map' : undefined, // помогает отслеживать ошибки
+    // devtool: isDev ? 'eval' : undefined, // помогает отслеживать ошибки
     devServer: isDev ? buildDevServer(option) : undefined,
     module: {
       rules: buildLoaders(option)

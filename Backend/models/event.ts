@@ -29,15 +29,15 @@ const eventShema = new mongoose.Schema({
           required: true
         },
         row: {
-          type: String,
+          type: Number,
           required: true
         },
         seat: {
-          type: String,
+          type: Number,
           required: true
         },
         price: {
-          type: String,
+          type: Number,
           required: true
         }
       }
@@ -68,6 +68,11 @@ const eventShema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     default: [],
     ref: 'user',
+  }],
+  ticket: [{
+    type: mongoose.Schema.Types.ObjectId,
+    default: [],
+    ref: 'ticket'
   }]
 }, { versionKey: false});
 

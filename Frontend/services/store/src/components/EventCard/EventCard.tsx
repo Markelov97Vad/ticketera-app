@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import ButtonLike from "../Buttons/ButtonLike/ButtonLike";
 import * as supportFunction from '../../utils/supportFunction';
 import ButtonLike from '../Ui/Buttons/ButtonLike/ButtonLike';
-import { EventType } from '@/types/event';
+import { IEvent } from '@/models/event';
 // import { addEventToFavorites, deleteEventToFavorites } from "../../utils/currentEventApi";
 // import useUserContext from "../../hooks/useUserContext";
 // import usePopupContext from "../../hooks/usePopupContext";
@@ -26,7 +26,7 @@ import { EventType } from '@/types/event';
 // };
 
 interface EventCardProps {
-  eventData: EventType;
+  eventData: IEvent;
 }
 
 const EventCard = ({ eventData }: EventCardProps) => {

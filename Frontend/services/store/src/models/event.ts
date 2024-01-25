@@ -1,3 +1,5 @@
+import { IZone } from './place';
+import { ITicket } from './ticket';
 import { IUserPersonalData } from './user';
 
 export interface IEventCard {
@@ -10,7 +12,7 @@ export interface IEventCard {
   likes: IUserPersonalData[];
 }
 
-export type EventType = {
+export interface IEvent {
   _id: string;
   type_event: string;
   place: {
@@ -20,12 +22,7 @@ export type EventType = {
     point?: string;
     type: {
       name: string;
-      zone: Array<{
-        name: string;
-        row: number;
-        seat: number;
-        price: number;
-      }>;
+      zone: IZone[];
     };
   };
   name: string;
@@ -35,4 +32,5 @@ export type EventType = {
   time_event: string;
   image: string;
   likes: IUserPersonalData[];
-};
+  tickets: ITicket[];
+}

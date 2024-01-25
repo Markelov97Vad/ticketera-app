@@ -11,7 +11,7 @@ import { storeRoutes } from '@packages/shared/src/routes/store';
 import { useSelector } from 'react-redux';
 import { useAppSelector, useAppDispatch } from '@/hooks/reduxHooks';
 // импорт события
-import eventSlice, { addEvents } from '../../store/event/eventSlice';
+import eventSlice from '../../store/event/eventSlice';
 import { RootState } from '@/store';
 import { fetchEvents } from '@/store/event/api';
 

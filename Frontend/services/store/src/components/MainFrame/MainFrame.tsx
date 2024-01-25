@@ -6,11 +6,11 @@ import * as supportFunction from '../../utils/supportFunction';
 import ButtonLike from '../Ui/Buttons/ButtonLike/ButtonLike';
 import TimeIcon from '../icons/TimeIcon';
 import PlaceIcon from '../icons/PlaceIcon';
-import { EventType } from '@/types/event';
+import { IEvent } from '@/models/event';
 // import ButtonShare from '../Ui/Buttons/ButtonShare/ButtonShare';
 
 type MainFrameProps = {
-  eventData: EventType;
+  eventData: IEvent;
 };
 
 function MainFrame({ eventData }: MainFrameProps) {

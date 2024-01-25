@@ -13,10 +13,16 @@ export interface IUserLogin extends IUser {
   password: string;
 }
 
-export interface IUserRegistrationResponse {
-  email: string;
+export interface IUserRegistrationResponse extends IUser {
   first_name: string;
   last_name: string;
+}
+
+export interface IUserTicket extends IUser {
+  _id: string;
+  username: string;
+  phone: string;
+  telegram: string;
 }
 
 export interface IUserLoginResponse {

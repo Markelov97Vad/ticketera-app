@@ -6,7 +6,7 @@ import Map, {
   ScaleControl,
   MapRef,
 } from 'react-map-gl/maplibre';
-import 'maplibre-gl/dist/maplibre-gl.css';
+// import 'maplibre-gl/dist/maplibre-gl.css';
 import './MapComponent.scss';
 
 type MapProps = {
@@ -34,7 +34,7 @@ function MapComponent({ point }: MapProps) {
   };
 
   return (
-    <div className="map-component">
+    <div>
       <Map
         ref={mapRef}
         mapLib={maplibregl}
