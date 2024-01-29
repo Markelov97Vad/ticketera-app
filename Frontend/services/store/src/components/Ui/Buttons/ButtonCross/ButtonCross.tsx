@@ -22,7 +22,7 @@ function ButtonCross({
         styles[`button-cross_color_${color}`]
       }`}
       type="button"
-    >X</button>
+    ></button>
   );
 }
 

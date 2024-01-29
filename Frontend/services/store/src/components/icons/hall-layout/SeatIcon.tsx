@@ -1,7 +1,6 @@
 import './SeatIcon.scss';
 import { IZone } from '@/models/place';
 import { useAppSelector } from '@/hooks/reduxHooks';
-import { useEffect, useState } from 'react';
 
 type SeatIconProps = {
   blue?: boolean;
@@ -32,10 +31,7 @@ function SeatIcon({
   id,
   sizeLayout = 'big',
 }: SeatIconProps) {
-  // const { paymentData } = useSeatContext();
-  // const dispatch = useAppDispatch();
   const { paymentData } = useAppSelector(state => state.place);
-  const [payData, setPayData] = useState(paymentData);
 
   const colors = [
     blue ? '#2BA6FF' : null,
@@ -45,20 +41,13 @@ function SeatIcon({
   ];
 
   const color = colors.find(col => col !== null);
-  useEffect(() => {
-    setPayData(() => paymentData);
-    console.log(handleIsActive());
-    
-  }, [paymentData]);
 
   function handleIsActive() {
-    return payData.some(ticket => {
+    return paymentData.some(ticket => {
       return seat === ticket.seat && row === ticket.row && name === ticket.name;
     });
   }
   const handleClick = () => {
-    console.log('CLick');
-    
     if (handleIsActive()) {
       handleDeletTicket({ seat, row, name, price, id });
     } else if (!handleIsActive()) {

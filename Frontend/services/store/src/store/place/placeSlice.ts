@@ -55,7 +55,7 @@ const placeSlice = createSlice({
       console.log('patch');
       
       const { seat, row, name } = action.payload;
-      state.paymentData.filter(event => {
+      state.paymentData = state.paymentData.filter(event => {
         return seat !== event.seat || row !== event.row || name !== event.name;
       });
     },
@@ -64,7 +64,7 @@ const placeSlice = createSlice({
       // return currentEvent.filter((event, index) => {
       //   //     return index !== id;
       //   //   });
-      state.paymentData.filter((event, index) => {
+      state.paymentData = state.paymentData.filter((event, index) => {
         return index !== action.payload;
       });
     },

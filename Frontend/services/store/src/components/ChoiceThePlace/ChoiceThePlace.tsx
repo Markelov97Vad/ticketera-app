@@ -4,11 +4,7 @@ import ButtonCross from '../Ui/Buttons/ButtonCross/ButtonCross';
 import PlaceIcon from '../icons/PlaceIcon';
 import SceneIcon from '../icons/SceneIcon';
 import TimeIcon from '../icons/TimeIcon';
-// import ZoneIcon from '../icons/ZoneIcon';
-// import SeatIcon from '../icons/hall-layout/SeatIcon';
-// import SeatIconDisabled from '../icons/hall-layout/SeatIconDisabled';
 import styles from './ChoiceThePlace.module.scss';
-// import useSeatContext from '../../hooks/useSeatContext';
 import { useNavigate } from 'react-router-dom';
 import * as supportFunction from '../../utils/supportFunction';
 import useImplementationScheme from '@/hooks/useImplementationScheme';
@@ -35,15 +31,16 @@ function ChoiceThePlace() {
     renderColorZone,
     renderValueSeat,
     counterPrice,
+    setCounterPrice,
     isPaid,
-  } = useImplementationScheme({ tickets, currentEvent, sizeLayout });
+  } = useImplementationScheme({ tickets, sizeLayout });
   const navigate = useNavigate();
   const [eventZone, setEventZone] = useState<IZone[]>([]);
 
   useEffect(() => {
     setEventZone(currentEvent?.place?.type?.zone);
-    console.log('currentEventZone', currentEvent?.place?.type?.zone);
-    console.log('cEve', currentEvent);
+    // console.log('currentEventZone', currentEvent?.place?.type?.zone);
+    // console.log('cEve', currentEvent);
   }, [currentEvent]);
 
   const declination = (numTicket: number, text: string[], cases: number[]) => {
@@ -106,6 +103,7 @@ function ChoiceThePlace() {
 
   const handleClose = () => {
     dispatch(clearPaymentData());
+    setCounterPrice(() => 0);
     dispatch(togglePopup());
   };
 
@@ -119,8 +117,6 @@ function ChoiceThePlace() {
 
   useEffect(() => {
     setSizeLayout(countSeat(eventZone) <= 108 ? 'small' : 'big');
-    console.log('EventZONE', eventZone);
-    console.log('Small', sizeLayout);
   }, []);
 
   return (
@@ -277,7 +273,7 @@ function ChoiceThePlace() {
               <Button
                 type="submit"
                 gradient={true}
-                additionalClass={styles['column__add-button']}
+                additionalClass={styles['counter__add-button']}
                 onClick={handleOrder}
                 disabled={paymentData.length === 0 ? true : false}
               >

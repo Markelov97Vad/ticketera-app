@@ -1,12 +1,10 @@
-import { createSlice, PayloadAction, SerializedError } from '@reduxjs/toolkit';
+import { createSlice, SerializedError } from '@reduxjs/toolkit';
 import { fetchEvents, getCurrentEvent } from './api';
 import { IEvent } from '@/models/event';
-import { IEventTicket, ITicket } from '@/models/ticket';
 
 type EventState = {
   events: IEvent[];
   currentEvent: IEvent;
-  // tickets: ITicket[];
   loading: 'idle' | 'pending' | 'succeeded' | 'failed';
   error: null | SerializedError;
 };
@@ -14,7 +12,6 @@ type EventState = {
 const initialState: EventState = {
   events: [],
   currentEvent: undefined,
-  // tickets: [],
   loading: 'idle',
   error: null,
 };
@@ -22,22 +19,7 @@ const initialState: EventState = {
 const eventSlice = createSlice({
   name: 'event',
   initialState,
-  // методы
-  reducers: {
-    // addEvents(state, action: PayloadAction<string>) {
-    //   console.log('state', state);
-    //   console.log('action', action);
-
-    //   state.events.push({
-    //     id: 1,
-    //     text: action.payload,
-    //     check: false,
-    //   });
-    // },
-    // addTickets(state, action: PayloadAction<ITicket[]>) {
-    //   state.tickets = action.payload;
-    // },
-  },
+  reducers: {},
   extraReducers: builder => {
     builder
       .addCase(fetchEvents.pending, state => {
@@ -71,7 +53,5 @@ const eventSlice = createSlice({
   },
 });
 
-// события которые запускают методы
 // export const { addTickets } = eventSlice.actions;
-// функция для изменения состояния store
 export default eventSlice.reducer;
