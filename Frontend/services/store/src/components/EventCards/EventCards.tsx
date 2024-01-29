@@ -3,10 +3,12 @@ import styles from './EventCards.module.scss';
 import EventCard from '../EventCard/EventCard';
 import eventCardsButtonData from './eventCardsButtonData.json';
 import Button from '../Ui/Buttons/Button/Button';
-import { eventCardsData } from '../Calendar/eventCardsData';
+// import { eventCardsData } from '../Calendar/eventCardsData';
+import { useAppSelector } from '@/hooks/reduxHooks';
 
-const EventCards = () => {
+const EventCards: React.FC = () => {
   const [buttonId, setButtonId] = React.useState(0);
+  const { events } = useAppSelector(state => state.event);
   // const { events } = useContext(EventsContext);
 
   return (
@@ -33,8 +35,8 @@ const EventCards = () => {
           ))}
         </div>
         <div className={styles['event-cards__list']}>
-          {eventCardsData.map(item => (
-            <EventCard key={item.id} eventData={item} />
+          {events.map(item => (
+            <EventCard key={item._id} eventData={item} />
           ))}
         </div>
         <Button

@@ -11,7 +11,9 @@ import { storeRoutes } from '@packages/shared/src/routes/store';
 import { useSelector } from 'react-redux';
 import { useAppSelector, useAppDispatch } from '@/hooks/reduxHooks';
 // импорт события
-import { addEvents } from '../../store/event/eventSlice';
+import eventSlice from '../../store/event/eventSlice';
+import { RootState } from '@/store';
+import { fetchEvents } from '@/store/event/api';
 
 // type HeaderProps = {
 //   isActivePopupCity: boolean;
@@ -29,9 +31,10 @@ const Header: React.FC = () => {
   const [isActivePopupCity, setIsActivePopupCity] = useState<boolean>(false);
   const [currentCity] = useState('Москва');
   //
-  // const event = useAppSelector(state => state.event.events);
+  const { events } = useAppSelector(state => state.event);
+  // const event = useSelector((state: RootState) => state.event.events);
   // функция (триггер) сообщает о событии, которое нужно передать в редьюсер
-  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
     // setType('login')
@@ -39,6 +42,11 @@ const Header: React.FC = () => {
   const handleHavigate = (): void => {
     navigate(storeRoutes.personalAccount.myTickets);
   };
+
+  useEffect(() => {
+    dispatch(fetchEvents());
+    console.log(events);
+  }, []);
 
   return (
     <header className={`${styles.header} ${styles['main-page__header']}`}>

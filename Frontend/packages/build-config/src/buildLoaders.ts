@@ -9,21 +9,50 @@ function buildLoaders(options: BuildOptions ): ModuleOptions['rules'] {
   const isDev = mode === 'development'
   const isProd = mode === 'production'
 
+  // const cssLoadersMod = {
+  //   loader: "css-loader",
+  //   options: {
+  //     modules: { // опции для названий классов стилей
+  //       // localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]'
+  //       // localIdentName: '[name]__[local]'
+  //       sourceMap: true,
+  //     }
+  //   }
+  // }
   const cssLoadersMod = {
     loader: "css-loader",
     options: {
-      modules: { // опции для названий классов стилей
-        localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]'
+      // sourceMap: true,
+      // modules: { // опции для названий классов стилей
+      //   // localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]',
+      // }
+      // modules: undefined as undefined
+      modules: {
+        auto: /\.module\.\w+$/i,
+        localIdentName: '[name]__[local]',
       }
     }
+  }
+
+  const sassLoadersMod = {
+    loader: 'sass-loader',
+  }
+
+  const globalStyleMod = {
+    resourceQuery: /global/, 
+    use: ['style-loader', 'css-loader', 'sass-loader']
   }
   
   const styleLoader = {
     test: /\.s[ac]ss$/i,
+    // test: /\.s[ac]ss$/i,
+    // exclude: /node_modules/,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       cssLoadersMod,
-      "sass-loader" // для обработки CSS и SCSS
+    //  'css-loader',
+      // 'sass-loader' // для обработки CSS и SCSS
+      sassLoadersMod
     ],
   }
   // // ts-loader умеет работать с jsx
@@ -96,13 +125,21 @@ function buildLoaders(options: BuildOptions ): ModuleOptions['rules'] {
   //   exclude: '/node_modules/'
   // }
 
+  // const sourceMapLoader = {
+  //   test: /\.tsx?$/,
+  //   enforce: "pre",
+  //   use: ["source-map-loader"],
+  // }
+
   return [
     assetLoader,
     styleLoader,
     tsLoader,
     // babelLoader,
-    babelLoader(options),
-    svgLoader
+    // babelLoader(options),
+    globalStyleMod,
+    svgLoader,
+    // sourceMapLoader
   ]
 }
 

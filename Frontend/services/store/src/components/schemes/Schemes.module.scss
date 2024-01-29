@@ -1,0 +1,67 @@
+// Shemes-type-small
+.zone {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  &__row {
+    display: flex;
+    column-gap: 43.8px;
+  }
+
+  &__column {
+    display: flex;
+    gap: 8.21px;
+  }
+
+  &__seat {
+    height: 21.6px;
+  }
+}
+
+// Schemes-type-big
+.sector {
+  display: flex;
+  justify-content: space-between;
+  &_type_additional {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__zone {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &_type_left {
+      transform: rotate(30deg) translate(-20px, -40px);
+    }
+
+    &_type_left-second {
+      transform: rotate(30deg) translate(-14px, -57px);
+    }
+
+    &_type_right {
+      transform: rotate(-30deg) translate(20px, -40px);
+    }
+
+    &_type_right-second {
+      transform: rotate(-30deg) translate(13px, -55px);
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: 4.48px;
+
+    &_left {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &_center {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

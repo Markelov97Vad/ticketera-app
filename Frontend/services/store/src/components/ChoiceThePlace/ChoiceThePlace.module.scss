@@ -1,0 +1,244 @@
+.choice-the-place {
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition:
+    visibility 0.3s,
+    opacity 0.3s ease-in;
+  z-index: 2;
+
+  &_visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1110px;
+    padding: 60px 49px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    background-color: #fff;
+  }
+
+  &__close-button {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 28px;
+    right: 28px;
+  }
+
+  &__title {
+    font-family: 'Unbounded';
+    font-size: 50px;
+    line-height: 53px;
+    font-weight: 600;
+    margin: 0 0 40px;
+  }
+
+  &__hall-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__counter {
+    margin-top: 13px;
+  }
+}
+
+/* данные о событии */
+.event-info {
+  border-bottom: 2px solid #9a9a9a;
+  padding-bottom: 24px;
+
+  &__title {
+    font-family: 'Unbounded';
+    font-size: 30px;
+    line-height: 31.8px;
+    font-weight: 700;
+  }
+
+  &__info-column {
+    max-height: 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+  }
+  &__text {
+    font-family: 'Nunito Sans';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #4c4f52;
+    margin-left: 8px;
+  }
+}
+
+// Схема зала
+.hall-layout {
+
+  &__wrapper {
+    box-sizing: border-box;
+    margin:0;
+    width: 100%;
+    min-width: 570.21px;
+    min-height: 402px;
+  }
+
+  &__location {
+    padding-top: 29px;
+    box-sizing: border-box;
+    overflow: auto;
+    max-height: 511px;
+  }
+
+  &__about-zones {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 62px;
+  }
+}
+
+.location {
+
+  &__scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__zone-seats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32.85px;
+    gap: 8.21px;
+    min-height: 233px;
+
+    &_type_big {
+      gap: 4px;
+      margin-top: 27.43px;
+    }
+  }
+}
+/* информация о зонах */
+.sector-element {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    font-family: 'Nunito Sans';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    &_type_zone {
+      margin-right: 10px;
+      margin-left: 4px;
+    }
+
+    &_type_price {
+      color: #9A9A9A;
+    }
+  }
+}
+
+// счетчик
+
+.counter {
+  width: 410px;
+  height: 356px;
+
+  &__title {
+    font-family: 'Nunito Sans';
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    margin:0 0 42px;
+  }
+
+  &__amount-list {
+    width: 410px;
+    height: 160px;
+    overflow: auto;
+  }
+
+  &__seat-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    font-family: 'Nunito Sans';
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #4C4F52;
+
+    &_type_zone {
+      font-weight: 700;
+    }
+  }
+
+  &__cross-button {
+    width: 14px;
+    height: 14px;
+    margin-left: 20px;
+  }
+
+  &__amount-info {
+    margin-top: 42px;
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__info-text_type_total-amount {
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  &__add-button {
+    border-radius: 50px;
+    border: none;
+    font-family: 'Nunito Sans';
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    min-height: 52px;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+}
