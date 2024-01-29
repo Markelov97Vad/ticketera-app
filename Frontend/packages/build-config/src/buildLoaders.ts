@@ -25,11 +25,11 @@ function buildLoaders(options: BuildOptions ): ModuleOptions['rules'] {
       // sourceMap: true,
       // modules: { // опции для названий классов стилей
       //   // localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]',
-      //   // localIdentName: '[name]__[local]'
       // }
       // modules: undefined as undefined
       modules: {
         auto: /\.module\.\w+$/i,
+        localIdentName: '[name]__[local]',
       }
     }
   }

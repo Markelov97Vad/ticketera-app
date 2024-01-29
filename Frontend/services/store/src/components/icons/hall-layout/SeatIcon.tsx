@@ -1,6 +1,7 @@
 import './SeatIcon.scss';
 import { IZone } from '@/models/place';
 import { useAppSelector } from '@/hooks/reduxHooks';
+import { useEffect, useState } from 'react';
 
 type SeatIconProps = {
   blue?: boolean;
@@ -14,7 +15,7 @@ type SeatIconProps = {
   id: number;
   price: number;
   handleСhoicePlace: ({ seat, row, name, id, price }: IZone) => void;
-  isSizeBig: boolean;
+  sizeLayout: 'big' | 'small';
 };
 
 function SeatIcon({
@@ -29,11 +30,12 @@ function SeatIcon({
   price,
   handleСhoicePlace,
   id,
-  isSizeBig = false,
+  sizeLayout = 'big',
 }: SeatIconProps) {
   // const { paymentData } = useSeatContext();
   // const dispatch = useAppDispatch();
   const { paymentData } = useAppSelector(state => state.place);
+  const [payData, setPayData] = useState(paymentData);
 
   const colors = [
     blue ? '#2BA6FF' : null,
@@ -43,9 +45,14 @@ function SeatIcon({
   ];
 
   const color = colors.find(col => col !== null);
+  useEffect(() => {
+    setPayData(() => paymentData);
+    console.log(handleIsActive());
+    
+  }, [paymentData]);
 
   function handleIsActive() {
-    return paymentData.some(ticket => {
+    return payData.some(ticket => {
       return seat === ticket.seat && row === ticket.row && name === ticket.name;
     });
   }
@@ -59,7 +66,7 @@ function SeatIcon({
     }
   };
 
-  return isSizeBig ? (
+  return sizeLayout === 'big' ? (
     <svg
       width="21.6"
       height="21.6"

@@ -6,12 +6,12 @@ import ZoneIcon from '@/components/icons/ZoneIcon';
 import SeatIcon from '@/components/icons/hall-layout/SeatIcon';
 import SeatIconDisabled from '@/components/icons/hall-layout/SeatIconDisabled';
 import { ITicket } from '@/models/ticket';
-import { addPaymentData, patchPaymentData } from '@/store/place/placeSlice';
+import { addPaymentData, deletePaymentData, patchPaymentData } from '@/store/place/placeSlice';
 
 type useImplementationSchemeProps = {
   currentEvent: IEvent;
   tickets: ITicket[];
-  isSizeHallLayoutSmall: boolean;
+  sizeLayout: 'big' | 'small';
 };
 type ZoneType = Omit<IZone, 'id' | 'price'>;
 type handleDeleteСhoicePlaceType = Pick<IZone, 'id' | 'price'>;
@@ -27,7 +27,7 @@ export interface renderValueSeatProps extends IZone {
 function useImplementationScheme({
   currentEvent,
   tickets,
-  isSizeHallLayoutSmall,
+  sizeLayout,
 }: useImplementationSchemeProps) {
   // const [totalOrder, setTotalOrder] = useState({});
   // const [eventZone, setEventZone] = useState<IZone[]>(
@@ -80,11 +80,12 @@ function useImplementationScheme({
     id,
     price,
   }: handleDeleteСhoicePlaceType) => {
-    setPaymentData(currentEvent => {
-      return currentEvent.filter((event, index) => {
-        return index !== id;
-      });
-    });
+    // setPaymentData(currentEvent => {
+    //   return currentEvent.filter((event, index) => {
+    //     return index !== id;
+    //   });
+    // });
+    dispatch(deletePaymentData(id));
 
     setCounterPrice(value => value - price);
   };
@@ -120,7 +121,7 @@ function useImplementationScheme({
             handleСhoicePlace={handleСhoicePlace}
             blue
             id={id}
-            isSizeBig={isSizeHallLayoutSmall}
+            sizeLayout={sizeLayout}
           />
         );
       case 2:
@@ -134,7 +135,7 @@ function useImplementationScheme({
             handleСhoicePlace={handleСhoicePlace}
             violet
             id={id}
-            isSizeBig={isSizeHallLayoutSmall}
+            sizeLayout={sizeLayout}
           />
         );
       case 3:
@@ -148,7 +149,7 @@ function useImplementationScheme({
             handleСhoicePlace={handleСhoicePlace}
             red
             id={id}
-            isSizeBig={isSizeHallLayoutSmall}
+            sizeLayout={sizeLayout}
           />
         );
       default:
@@ -162,7 +163,7 @@ function useImplementationScheme({
             handleСhoicePlace={handleСhoicePlace}
             red={true}
             id={id}
-            isSizeBig={isSizeHallLayoutSmall}
+            sizeLayout={sizeLayout}
           />
         );
     }

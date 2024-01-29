@@ -52,9 +52,20 @@ const placeSlice = createSlice({
       state.paymentData.push(action.payload);
     },
     patchPaymentData(state, action: PayloadAction<IZone>) {
+      console.log('patch');
+      
       const { seat, row, name } = action.payload;
       state.paymentData.filter(event => {
         return seat !== event.seat || row !== event.row || name !== event.name;
+      });
+    },
+    deletePaymentData(state, action: PayloadAction<number>) {
+      // const {  } = action.payload;
+      // return currentEvent.filter((event, index) => {
+      //   //     return index !== id;
+      //   //   });
+      state.paymentData.filter((event, index) => {
+        return index !== action.payload;
       });
     },
     clearPaymentData(state) {
@@ -88,6 +99,7 @@ export const {
   addCurrentEvent,
   addPaymentData,
   patchPaymentData,
+  deletePaymentData,
   clearPaymentData,
   togglePopup,
   addOrder,

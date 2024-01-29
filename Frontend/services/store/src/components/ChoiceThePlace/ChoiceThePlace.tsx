@@ -24,7 +24,7 @@ import SchemesSizeBig from '../schemes/SchemesSizeBig';
 import { IZone } from '@/models/place';
 
 function ChoiceThePlace() {
-  const [isSizeHallLayoutSmall, setIsSizeHallLayoutSmall] = useState(false);
+  const [sizeLayout, setSizeLayout] = useState<'big' | 'small'>('small');
   const dispatch = useAppDispatch();
   const { tickets, paymentData, isOpen } = useAppSelector(state => state.place);
   const { currentEvent } = useAppSelector(state => state.event);
@@ -36,7 +36,7 @@ function ChoiceThePlace() {
     renderValueSeat,
     counterPrice,
     isPaid,
-  } = useImplementationScheme({ tickets, currentEvent, isSizeHallLayoutSmall });
+  } = useImplementationScheme({ tickets, currentEvent, sizeLayout });
   const navigate = useNavigate();
   const [eventZone, setEventZone] = useState<IZone[]>([]);
 
@@ -118,8 +118,9 @@ function ChoiceThePlace() {
   };
 
   useEffect(() => {
-    setIsSizeHallLayoutSmall(countSeat(eventZone) <= 108);
+    setSizeLayout(countSeat(eventZone) <= 108 ? 'small' : 'big');
     console.log('EventZONE', eventZone);
+    console.log('Small', sizeLayout);
   }, []);
 
   return (
@@ -156,18 +157,16 @@ function ChoiceThePlace() {
           <div className={styles['hall-layout__wrapper']}>
             <div className={styles['hall-layout__location']}>
               <div className={styles.location__scene}>
-                {isSizeHallLayoutSmall ? (
-                  <SceneIcon size="small" />
-                ) : (
+                {sizeLayout === 'big' ? (
                   <SceneIcon size="big" />
+                ) : (
+                  <SceneIcon size="small" />
                 )}
               </div>
               <div className={styles['location__zone-seats']}>
                 <div
                   className={`${styles.location__seats} ${
-                    !isSizeHallLayoutSmall
-                      ? styles.location__seats_type_big
-                      : ''
+                    sizeLayout === 'big' ? styles.location__seats_type_big : ''
                   }`}
                 >
                   {countSeat(eventZone) <= 108
